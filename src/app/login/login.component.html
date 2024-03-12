@@ -1,0 +1,21 @@
+<p>login works!</p>
+
+
+<div class="container">
+    <div class="form-container">
+        <form [formGroup]="myForm">
+            <div class="text-field">
+                <label for="user">Username </label>
+                <input type="text" formControlName="user">
+            </div>
+
+            <br>
+            
+            <div class="text-field">
+                <label for="password">Password </label>
+                <input type="password" formControlName="password">
+            </div>
+            <input type="submit" class="button" [disabled]="myForm.invalid" (click)="onSubmit()">
+        </form>
+    </div>
+</div>

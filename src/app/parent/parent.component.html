@@ -1,0 +1,25 @@
+<p>parent works!</p>
+
+
+<!-- <app-child (sendToParent)="fromChild($event)">
+    <div>{{datas}}</div>
+</app-child>
+
+<app-child [dataFromParent]="data">
+    <h2>This is Data From Child ! ! !</h2>
+</app-child> -->
+
+<app-child [data]="dataForCh" >
+
+</app-child>
+
+<app-child (sendTo)="fromChild($event)">
+        <div>{{dataFromChild}}
+            <h2>DATA FROM CHILD</h2>
+        </div>
+</app-child>
+
+
+
+
+

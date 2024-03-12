@@ -1,0 +1,31 @@
+.container {
+    display: flex;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    align-items: center;
+    font-size: 20px;
+    padding: 50px;
+    background-color: red;
+    border-radius: 10px;
+    
+    .text-field {
+       width: 200px;
+    }
+    .text-field input{
+        width: 95%;
+        height: 20px;
+        border-radius: 10px;
+    }
+
+    .button {
+        width: 100%;
+        font-size: 20px;
+        margin-top: 20px;
+        background-color: blue;
+        color: white;
+        border-radius: 10px;
+
+    }
+}

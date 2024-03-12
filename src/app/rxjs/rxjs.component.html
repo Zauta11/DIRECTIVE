@@ -1,0 +1,87 @@
+<p>RXJS works!</p>
+
+
+    <ul class="list-group">
+      <li class="list-group-item">{{results}}</li>
+    </ul>
+<!--   
+    <app-test-rx (sendTo)="fromChild($event)">
+        <p>DATA</p>
+    </app-test-rx> -->
+
+    <app-test-rx (sendTo)="fromChild($event)">
+        <div>{{dataFromChild}}
+            <h2>DATA FROM CHILD</h2>
+        </div>
+</app-test-rx>
+
+
+
+<app-test-rx [users]="usersForChild">
+    
+</app-test-rx>
+
+<button routerLink="rx2" >Go To RX Test 2 </button>
+
+<div *ngIf="startOf$ | async as startOf" >
+    <div *ngIf="startFrom$ | async as startFrom" >
+        <h2>{{startOf}}</h2>
+        <h3>{{startFrom}}</h3>
+    </div>
+
+</div>
+
+
+<button #fromNewEvent (click)="newEvent()" >
+        Click for Observable
+</button>
+
+<!-- Form RXJS -->
+
+<!-- NGModel მა Two way Binding  ით ინფუთიდან წაიღო ngForm კომპონენტში, კომპონენტში დახვდა ცარიელი მნიშვნელობა
+ინფუთი რომ შეივსო დააბრუნა ვიუში და ინტერპოლაციით ამოაგდო თემფლეითში შედეგი -->
+
+<div [formGroup]="searchForm" >
+    <input  type="text" formControlName="name" placeholder="Search Your Product" >
+    <button [disabled]="searchForm.invalid" (click)="goSearch()">Search</button>
+</div>
+<div >
+    <!-- <h3>{{ngForm}}</h3> -->
+</div>
+
+<button (click)="getNgForm()" > get Info From NgForm</button>
+
+
+
+
+<div *ngIf="data$ | async as data" >
+
+    <div *ngFor="let filtuser of data?.filteredUsers" >
+        <h3>{{filtuser}}</h3>
+    </div>
+
+    <div *ngFor="let user of data?.users" >
+        <h2>{{user.year}}</h2>
+    </div>
+
+</div>
+
+<!-- 
+<div  *ngFor="let user of users$ | async" >
+        <h2>{{user.name}}</h2> 
+</div>
+<br> -->
+
+<!-- <div *ngFor="let us of username$ | async" >
+    <h2>{{us}}</h2>
+</div> -->
+
+<!-- <div *ngFor="let filtuser of filteredUsers$ | async" >
+    <h3>{{filtuser}}</h3>
+</div> -->
+
+<div *ngIf="person$ | async as person" >
+    <h1>{{person}}</h1>
+</div>
+
+<!-- <div>{{username}}</div> -->

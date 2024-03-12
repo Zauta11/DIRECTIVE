@@ -1,0 +1,7 @@
+<p>second works!</p>
+
+
+<div *ngFor="let user of getData$ | async" >
+    <h2>{{user.id}}</h2>
+    {{user.title}}
+</div>

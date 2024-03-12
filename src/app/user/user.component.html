@@ -1,0 +1,26 @@
+<p>user works!</p>
+
+<div class="container">
+    <div appMain [ages]="age" [name]="name" [surname]="surname">
+        <h2>{{age}}</h2>
+        <h2 appSec>{{name}}</h2>
+        <h2 appThird>{{surname}}</h2>
+    </div>
+</div>
+
+<!-- <div  appDirective [firstName]="firstName" [lastName]="lastName" >
+    <h2>{{firstName}}</h2>
+    <h2>{{lastName}}</h2>
+   
+</div> -->
+
+<!-- <app-child (sendToParent)="getInfo($event)"></app-child>
+
+<app-child [goChild]="age"></app-child> -->
+
+<div *ngFor="let user of dataFromLazy">
+    <h2>{{user.name}}</h2>
+</div>
+
+
+<ng-content></ng-content>

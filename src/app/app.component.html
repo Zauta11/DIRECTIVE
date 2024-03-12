@@ -1,0 +1,18 @@
+
+<router-outlet></router-outlet>
+<!-- 
+<div *ngFor="let us of getData$ | async" >
+
+    <div>
+                {{us.id}}
+                {{us.title}}
+    </div>
+</div> -->
+
+<div class="container">
+    <div appMain [ages]="age" [name]="name" [surname]="surname">
+        <h2>{{age}}</h2>
+        <h2 appSec>{{name}}</h2>
+        <h2 appThird>{{surname}}</h2>
+    </div>
+</div>

@@ -1,0 +1,66 @@
+
+
+
+
+    <p>ng works!</p>
+
+    <h2>{{title | uppercase}}</h2>
+    <br>
+    <h2> {{numb | currency: "USD"}}</h2>
+
+    <!-- Chaining Pipe ( multiple Pipe ) -->
+    <h1>{{time | date | uppercase}}</h1>
+
+<div class="main" >
+
+    
+    <!-- ====================== -->
+    
+    <!-- Ng - Template -->
+    
+    
+    
+    <div  *ngIf="admin; else noAdmin">
+        User is Here !
+    </div>
+    
+    <ng-template #noAdmin>
+        User is not Here !
+    </ng-template>
+    
+    <button class="btn" (click)="change()" >Change</button>
+    <!-- ========================= -->
+
+</div>
+
+<!-- Ng If შემთხვევა -->
+<div *ngIf="students.length > 2" >
+    Two Students
+    <h2>{{students}}</h2>
+</div>
+
+<div *ngIf="students.length == 0 || students.length <= 2">
+    No Students
+    <h2>{{students}}</h2>
+</div>
+
+<!-- ///////////////// -->
+
+<!-- NG Switch შემთხვევა როცა გვინდა რაოდენობა შევუსაბამოთ ველიუს-->
+
+
+<ui [ngSwitch]="students.length" >
+    <li *ngSwitchCase="1" >There is One Student</li>
+    <li *ngSwitchCase="2" >There is Two Students</li>
+    <li *ngSwitchCase="3" >There is Three Students</li>
+    <li *ngSwitchCase="4" >There is Four Students</li>
+</ui>
+
+<!-- style vs ng style -->
+<div Style="background-color: red" >I am Happy</div>
+<br>
+<div [ngStyle]="{'background-color': colorForStyle}" >I am Happy ngStyle</div>
+<br>
+
+<!-- ngClass -->
+<div [ngClass]="colorForClass" > I am Happy ngClass</div>

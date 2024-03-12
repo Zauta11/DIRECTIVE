@@ -1,0 +1,22 @@
+<p>child works!</p>
+
+<!-- <div *ngFor="let info of data" >
+    <p>{{info.id}}</p>
+</div> -->
+
+<ng-content></ng-content>
+<!-- <button (click)="showChild()" > INFO</button>
+<div *ngFor="let us of dataFromParent" >
+
+    <p>{{us.id}}</p>
+</div> -->
+
+<div *ngFor="let us of data" >
+    <h2>{{us.id}}</h2>
+    <h2>{{us.name}}</h2>
+    <h3>{{us.rating}}</h3>
+
+</div>
+
+
+

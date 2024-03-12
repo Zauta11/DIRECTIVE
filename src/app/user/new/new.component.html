@@ -1,0 +1,16 @@
+<p>new works!</p>
+
+<button  routerLink="second" >go to Second</button>
+
+<div  appDirective [firstName]="firstName" [lastName]="lastName">
+    <h2>{{firstName}}</h2>
+    <h2>{{lastName}}</h2>
+</div>
+
+
+<div *ngIf="elements$ | async as element" >
+    <div  *ngFor="let us of elements$ | async" >
+        <h2>{{us.id}}</h2>
+    </div>
+    <h3 *ngIf="behavior$ | async as behavior" >{{behavior}}</h3>
+</div>

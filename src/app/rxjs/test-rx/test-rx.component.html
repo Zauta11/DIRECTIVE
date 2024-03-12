@@ -1,0 +1,69 @@
+<p>test-rx works!</p>
+
+
+<h2>dsdsd</h2>
+<div *ngIf="rxData$ | async as rxData" >
+
+    <div *ngFor="let user of rxData$ | async" >
+        <h2>{{user.id}}</h2>
+    </div>
+</div>
+<ng-content></ng-content>
+
+<!-- <button (click)="sendInfoToParent()">Send Data From Child to Parent</button> -->
+
+<button (click)="sendInfoToChild()">Send Data From Parent to Child</button>
+
+<div *ngFor="let us of infoFromParent">
+    <h3>{{us}}</h3>
+
+</div>
+
+<h2 *ngIf="dataLength$ | async as dataLength" >
+    Total Number Of GIO's Users is: {{dataLength}}
+</h2>
+
+<div *ngIf="toppingList$ | async as toppingList" >
+
+    <mat-form-field appearance="fill">
+        <mat-label>Choose Movie</mat-label>
+        <mat-select [formControl]="toppings" multiple >
+          <mat-select-trigger >
+            {{toppings.value?.[0] || ''}}
+            <span *ngIf="(toppings.value?.length || 0) > 1" class="example-additional-selection" >
+              (+{{(toppings.value?.length || 0) - 1}} {{toppings.value?.length === 2 ? 'other' : 'others'}})
+            </span>
+          </mat-select-trigger>
+          <mat-option *ngFor="let topping of toppingList" [value]="topping" (click)="onSelect(toppings)" >{{topping.name}}</mat-option>
+        </mat-select>
+      </mat-form-field> 
+</div>
+  
+
+
+
+
+
+<!-- FROM YOUTUBE -->
+
+      <div *ngIf="currentPage$ | async as currentPage">
+        Current page: {{currentPage}}
+      
+      <div slot="start">
+        <button (click)="prevPage()">Prev</button>
+     
+      
+        <button (click)="nextPage()">Next</button>
+      </div>
+
+      <h2>{{newSubject1$.value}}</h2>
+   
+ 
+    <ng-container *ngIf="currentPageData$ | async as passengers">
+     
+        <div *ngFor="let passenger of passengers">
+          <label [ngStyle]="{'color': 'red'}" >{{passenger.name}}</label>
+          <h3 [ngStyle]="{'background-color': 'green'}" >{{passenger._id}}</h3>
+          </div>
+     
+    </ng-container>

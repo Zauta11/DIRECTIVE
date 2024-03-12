@@ -1,0 +1,70 @@
+<p>data works!</p>
+
+<button routerLink="directive">Directive and User</button>
+
+<button routerLink="child">Child</button>
+
+<button routerLink="parent" [ngStyle]="{'background-color': 'red'}">Parent</button>
+
+<button routerLink="template/ng" >Ng Templates</button>
+
+
+<button routerLink="apprxjs" >RX TEST</button>
+
+<button routerLink="testrx" >TEST FOR RXJS</button>
+
+<button routerLink="new">New Lazy </button>
+
+<button routerLink="lazy-loading" >lazy loading component</button>
+
+<div class="home-container">
+    <div class="movies-thumbnail">
+        <div class="movie" *ngFor="let movie of data$ | async">
+            <div class="cover">
+                <img src="{{movie.cover}}" alt="movieImage">
+            </div>
+            <div class="details">
+                <div class="name">{{movie.name}}</div>
+                <div class="rating">{{movie.rating}}</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 
+<div class="home-container">
+    <div class="all-movies">
+        <div class="trending-movies">
+            <div class="top">
+                <h4>Trending movies</h4>
+                <div class="view-all">View All</div>
+            </div>
+
+        </div>
+    </div>
+</div> -->
+
+
+<!-- 
+<div class="movies-thumbnail">
+    <div class="movie" *ngFor="let movie of data" >
+        <div class="cover">
+            <img [src]="movie.cover" alt="movie-image"/>
+        </div>
+        <div class="detail">
+            <div class="name">{{movie.name}}</div>
+            <div class="rating">
+                <span class="rating-value">{{ movie.rating }}</span>
+                
+            </div>
+        </div>
+    </div>
+</div> -->
+
+
+<div *ngFor="let users of productData$ | async" >
+    <!-- <h2>GAMARJOBA</h2> -->
+    <h3>{{users.id}}</h3>
+    <h2>{{users.title}}</h2>
+
+</div>
